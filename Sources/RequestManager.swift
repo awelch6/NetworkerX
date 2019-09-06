@@ -16,9 +16,9 @@ public class RequestManager {
     var session: URLSession
     var encoder: ParameterEncoder
 
-    var currentTask: URLSessionDataTask?
+    public var currentTask: URLSessionDataTask?
 
-    init(session: URLSession = URLSession.shared, encoder: ParameterEncoder = JSONParameterEncoder()) {
+    public init(session: URLSession = URLSession.shared, encoder: ParameterEncoder = JSONParameterEncoder()) {
         self.session = session
         self.encoder = encoder
     }

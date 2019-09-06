@@ -12,8 +12,11 @@ private enum JSONEncodingError: Error {
     case unableToParse
 }
 
-struct JSONParameterEncoder: ParameterEncoder {
-    func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
+public struct JSONParameterEncoder: ParameterEncoder {
+    
+    public init() { }
+    
+    public func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
         do {
             let json = try JSONSerialization.data(withJSONObject: parameters, options: [])
 
