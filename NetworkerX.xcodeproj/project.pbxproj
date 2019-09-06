@@ -102,7 +102,9 @@
 		2B53B85B2321E0B700555F97 = {
 			isa = PBXGroup;
 			children = (
-				2B53B8672321E0B700555F97 /* NetworkerX */,
+				2B53B8682321E0B700555F97 /* NetworkerX.h */,
+				2B53B8692321E0B700555F97 /* Info.plist */,
+				2B53B8BC2321E6E000555F97 /* Sources */,
 				2B53B8722321E0B700555F97 /* NetworkerXTests */,
 				2B53B8662321E0B700555F97 /* Products */,
 				F576B36BF2FDDD2793645888 /* Pods */,
@@ -117,20 +119,6 @@
 				2B53B86E2321E0B700555F97 /* NetworkerXTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		2B53B8672321E0B700555F97 /* NetworkerX */ = {
-			isa = PBXGroup;
-			children = (
-				2B53B8962321E11800555F97 /* Enums */,
-				2B53B89A2321E11800555F97 /* Extensions */,
-				2B53B89C2321E11800555F97 /* Protocols */,
-				2B53B8932321E11800555F97 /* RequestManager.swift */,
-				2B53B8942321E11800555F97 /* Utilities */,
-				2B53B8682321E0B700555F97 /* NetworkerX.h */,
-				2B53B8692321E0B700555F97 /* Info.plist */,
-			);
-			path = NetworkerX;
 			sourceTree = "<group>";
 		};
 		2B53B8722321E0B700555F97 /* NetworkerXTests */ = {
@@ -206,6 +194,18 @@
 				2B53B8B22321E12100555F97 /* MockRequestable.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2B53B8BC2321E6E000555F97 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2B53B8962321E11800555F97 /* Enums */,
+				2B53B89A2321E11800555F97 /* Extensions */,
+				2B53B89C2321E11800555F97 /* Protocols */,
+				2B53B8932321E11800555F97 /* RequestManager.swift */,
+				2B53B8942321E11800555F97 /* Utilities */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		F576B36BF2FDDD2793645888 /* Pods */ = {
