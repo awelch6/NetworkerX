@@ -17,7 +17,9 @@ class MockRequestable: Requestable {
 
     var requestWasCalled = 0
     var requestWasCalledWith: (type: Any, url: URL, method: HTTPMethod, parameters: Parameters?, headers: Headers?)?
-
+    
+    var handleResponseWasCalled = 0
+    
     enum Mode<T: Decodable> {
         case success(T)
         case failed
@@ -58,13 +60,14 @@ class MockRequestable: Requestable {
     }
 
     func handleResponse<T>(data: Data?, response: URLResponse?, error: Error?, _ completion: @escaping (NetworkResponse<T>) -> Void) where T: Decodable {
-
+        handleResponseWasCalled += 1
     }
 }
 
 extension MockRequestable: TestResetable {
     func resetCounters() {
         requestWasCalled = 0
+        handleResponseWasCalled = 0
 
     }
     
