@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ParameterEncoder {
+public protocol ParameterEncoder {
     func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws
 }

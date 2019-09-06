@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NetworkResponse<T> {
+public enum NetworkResponse<T> {
     case success(T)
     case failure(NetworkError)
 }

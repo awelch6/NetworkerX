@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias Headers = [String: String]
-typealias Parameters = [String: Any]
+public typealias Headers = [String: String]
+public typealias Parameters = [String: Any]
 
-class RequestManager {
+public class RequestManager {
 
     var session: URLSession
     var encoder: ParameterEncoder
@@ -28,7 +28,7 @@ class RequestManager {
 
 extension RequestManager: Requestable {
 
-    func request<T: Decodable>(type: T.Type, url: URL, method: HTTPMethod, parameters: Parameters? = nil, headers: Headers? = nil, _ completion: @escaping (NetworkResponse<T>) -> Void) {
+    public func request<T: Decodable>(type: T.Type, url: URL, method: HTTPMethod, parameters: Parameters? = nil, headers: Headers? = nil, _ completion: @escaping (NetworkResponse<T>) -> Void) {
 
         guard let request = buildRequest(url: url, method: method, parameters: parameters, headers: headers) else {
             completion(.failure(.badRequest))
@@ -44,7 +44,7 @@ extension RequestManager: Requestable {
         currentTask?.resume()
     }
 
-    func request(url: URL, method: HTTPMethod, parameters: Parameters? = nil, headers: Headers? = nil, _ completion: @escaping (Data?, URLResponse?, NetworkError?) -> Void) {
+    public func request(url: URL, method: HTTPMethod, parameters: Parameters? = nil, headers: Headers? = nil, _ completion: @escaping (Data?, URLResponse?, NetworkError?) -> Void) {
 
         guard let request = buildRequest(url: url, method: method, parameters: parameters, headers: headers) else {
             completion(nil, nil, .badRequest)
