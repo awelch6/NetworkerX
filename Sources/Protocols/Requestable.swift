@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Requestable {
+public protocol Requestable {
 
     /// Session: Holds a reference to the current URLSession
     var session: URLSession { get set }
@@ -46,13 +46,4 @@ protocol Requestable {
     ///   - headers: headers to be sent with the request
     /// - Returns: returns a properly formatted URLRequest or nil if that is not possible
     func buildRequest(url: URL, method: HTTPMethod, parameters: Parameters?, headers: Headers?) -> URLRequest?
-
-    /// Decodes the raw response data of a request.
-    ///
-    /// - Parameters:
-    ///   - data: data coming back from the request.
-    ///   - response: URLResponse from the request
-    ///   - error: error coming back from the request
-    ///   - completion: completes with the model if the request was successful and the response was serialized into the given type. completes with an error if the request fails or response is unable to be serialzed.
-    func handleResponse<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, _ completion: @escaping (NetworkResponse<T>) -> Void)
 }

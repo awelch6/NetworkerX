@@ -13,8 +13,8 @@ public typealias Parameters = [String: Any]
 
 public class RequestManager {
 
-    var session: URLSession
-    var encoder: ParameterEncoder
+    public var session: URLSession
+    public var encoder: ParameterEncoder
 
     public var currentTask: URLSessionDataTask?
 
@@ -68,7 +68,7 @@ extension RequestManager: Requestable {
         currentTask?.resume()
     }
 
-    func buildRequest(url: URL, method: HTTPMethod, parameters: Parameters? = nil, headers: Headers? = nil) -> URLRequest? {
+    public func buildRequest(url: URL, method: HTTPMethod, parameters: Parameters? = nil, headers: Headers? = nil) -> URLRequest? {
         var request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 5.0)
         request.httpMethod = method.rawValue
 
